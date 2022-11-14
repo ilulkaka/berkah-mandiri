@@ -58,7 +58,7 @@
                 </div><!-- /.container-fluid -->
             </nav>
 
-            @yield('konten')
+            @yield('content')
 
         </div>
     </div>

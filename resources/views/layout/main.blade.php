@@ -33,8 +33,8 @@
             </div>
             <div class="mdc-drawer__content">
                 <div class="user-info">
-                    <p class="name">Clyde Miles</p>
-                    <p class="email">clydemiles@elenor.us</p>
+                    <p class="name">{{ Auth::user()->email }}</p>
+                    <p class="email">{{ Auth::user()->role }}</p>
                 </div>
                 <div class="mdc-list-group">
                     <nav class="mdc-list mdc-drawer-menu">
@@ -165,7 +165,7 @@
                     </div>
                     <p class="tx-8 mt-3 mb-1">More elements. More Pages.</p>
                     <p class="tx-8 mb-3">Starting from $25.</p>
-                    <a href="https://www.bootstrapdash.com/product/material-design-admin-template/" target="_blank">
+                    <a href="#">
                         <span class="mdc-button mdc-button--raised mdc-button--white">Upgrade to Pro</span>
                     </a>
                 </div>
@@ -379,37 +379,8 @@
                 </div>
             </header>
             <!-- partial -->
-            <div class="page-wrapper mdc-toolbar-fixed-adjust">
-                <main class="content-wrapper">
-                    <div class="mdc-layout-grid">
-                        <div class="mdc-layout-grid__inner">
-
-                            @yield('content')
-
-
-                        </div>
-                    </div>
-                </main>
-                <!-- partial:partials/_footer.html -->
-                <footer>
-                    <div class="mdc-layout-grid">
-                        <div class="mdc-layout-grid__inner">
-                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-                                <span class="text-center text-sm-left d-block d-sm-inline-block tx-14">Copyright © <a
-                                        href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com
-                                    </a>2020</span>
-                            </div>
-                            <div
-                                class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop d-flex justify-content-end">
-                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center tx-14">Free <a
-                                        href="https://www.bootstrapdash.com/material-design-dashboard/"
-                                        target="_blank"> material admin </a> dashboards from Bootstrapdash.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- partial -->
-            </div>
+            @yield('content')
+            
         </div>
     </div>
     <!-- plugins:js -->
