@@ -27,9 +27,11 @@
         <!-- partial:partials/_sidebar.html -->
         <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
             <div class="mdc-drawer__header">
-                <a href="index.html" class="brand-logo">
+                <!--<a href="index.html" class="brand-logo">
                     <img src="/assets/images/logo.svg" alt="logo">
-                </a>
+                </a>-->
+                <br>
+                <h3 style="color:white">Koperasi Insan Mandiri</h3>
             </div>
             <div class="mdc-drawer__content">
                 <div class="user-info">
@@ -46,10 +48,10 @@
                             </a>
                         </div>
                         <div class="mdc-list-item mdc-drawer-item">
-                            <a class="mdc-drawer-link" href="pages/forms/basic-forms.html">
+                            <a class="mdc-drawer-link" href="{{url('/transaksi/frm_transaksi')}}">
                                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                                     aria-hidden="true">track_changes</i>
-                                Forms
+                                Transaksi
                             </a>
                         </div>
                         <div class="mdc-list-item mdc-drawer-item">
@@ -57,7 +59,7 @@
                                 data-target="ui-sub-menu">
                                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                                     aria-hidden="true">dashboard</i>
-                                UI Features
+                                Simpanan
                                 <i class="mdc-drawer-arrow material-icons">chevron_right</i>
                             </a>
                             <div class="mdc-expansion-panel" id="ui-sub-menu">
@@ -79,34 +81,61 @@
                             <a class="mdc-drawer-link" href="pages/tables/basic-tables.html">
                                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                                     aria-hidden="true">grid_on</i>
-                                Tables
+                                Pinjaman
                             </a>
                         </div>
                         <div class="mdc-list-item mdc-drawer-item">
-                            <a class="mdc-drawer-link" href="pages/charts/chartjs.html">
+                            <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel"
+                                data-target="submenu-laporan">
                                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                                     aria-hidden="true">pie_chart_outlined</i>
-                                Charts
+                                Laporan
+                                <i class="mdc-drawer-arrow material-icons">chevron_right</i>
                             </a>
+                            <div class="mdc-expansion-panel" id="submenu-laporan">
+                                <nav class="mdc-list mdc-drawer-submenu">
+                                    <div class="mdc-list-item mdc-drawer-item">
+                                        <a class="mdc-drawer-link" href="pages/samples/blank-page.html">
+                                            Transaksi
+                                        </a>
+                                    </div>
+                                    <div class="mdc-list-item mdc-drawer-item">
+                                        <a class="mdc-drawer-link" href="pages/samples/403.html">
+                                            SHU
+                                        </a>
+                                    </div>
+                                    <div class="mdc-list-item mdc-drawer-item">
+                                        <a class="mdc-drawer-link" href="pages/samples/404.html">
+                                            Simpanan
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="mdc-list-item mdc-drawer-item">
+                                        <a class="mdc-drawer-link" href="pages/samples/login.html">
+                                            Pinjaman
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
                         <div class="mdc-list-item mdc-drawer-item">
                             <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel"
                                 data-target="sample-page-submenu">
                                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                                     aria-hidden="true">pages</i>
-                                Sample Pages
+                                Master Data
                                 <i class="mdc-drawer-arrow material-icons">chevron_right</i>
                             </a>
                             <div class="mdc-expansion-panel" id="sample-page-submenu">
                                 <nav class="mdc-list mdc-drawer-submenu">
                                     <div class="mdc-list-item mdc-drawer-item">
                                         <a class="mdc-drawer-link" href="pages/samples/blank-page.html">
-                                            Blank Page
+                                            Anggota
                                         </a>
                                     </div>
                                     <div class="mdc-list-item mdc-drawer-item">
                                         <a class="mdc-drawer-link" href="pages/samples/403.html">
-                                            403
+                                            Harga
                                         </a>
                                     </div>
                                     <div class="mdc-list-item mdc-drawer-item">
@@ -114,16 +143,7 @@
                                             404
                                         </a>
                                     </div>
-                                    <div class="mdc-list-item mdc-drawer-item">
-                                        <a class="mdc-drawer-link" href="pages/samples/500.html">
-                                            500
-                                        </a>
-                                    </div>
-                                    <div class="mdc-list-item mdc-drawer-item">
-                                        <a class="mdc-drawer-link" href="pages/samples/505.html">
-                                            505
-                                        </a>
-                                    </div>
+                                    
                                     <div class="mdc-list-item mdc-drawer-item">
                                         <a class="mdc-drawer-link" href="pages/samples/login.html">
                                             Login
@@ -379,7 +399,27 @@
                 </div>
             </header>
             <!-- partial -->
+            <div class="page-wrapper mdc-toolbar-fixed-adjust">
             @yield('content')
+            <!-- partial:partials/_footer.html -->
+        <footer>
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                        <span class="text-center text-sm-left d-block d-sm-inline-block tx-14">Copyright © <a
+                                href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2020</span>
+                    </div>
+                    <div
+                        class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop d-flex justify-content-end">
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center tx-14">Free <a
+                                href="https://www.bootstrapdash.com/material-design-dashboard/" target="_blank"> material
+                                admin </a> dashboards from Bootstrapdash.com</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
             
         </div>
     </div>
